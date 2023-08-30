@@ -38,7 +38,7 @@ Download the Latest Version of Ganache - https://trufflesuite.com/ganache/
 Follow the instructions on the Ganache download to download and install this tool on your local machine.
 
   ### Create a Workspace
-When you open Ganache, you are presented with two options for creating a workspace: Quickstart Ethereum and New Workspace Ethereum. 
+When you open Ganache, you are presented with two options for creating a workspace: *Quickstart Ethereum* and *New Workspace Ethereum*. 
 
   **Next Choose and Click...** `Quickstart Ethereum`
 
