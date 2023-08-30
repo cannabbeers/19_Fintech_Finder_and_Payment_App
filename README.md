@@ -18,16 +18,21 @@ module 19 setup instructions called for specific versions of `web3`, `eth-tester
 
   ### (Option #2) update your current `dev` environment with following instructions: 
 
-  To install the Web3.py library, check that your dev environment is active, and then run the following:
-      pip install web3==5.17
+To install the Web3.py library, check that your dev environment is active, and then run the following:
+      
+          pip install web3==5.17
       
 To install the ethereum-tester library, check that your dev environment is active, and then run the following:
-      pip install eth-tester==0.5.0b3
+      
+          pip install eth-tester==0.5.0b3
       
 To install the mnemonic package, check that your dev environment is active, and then run the following:
-      pip install mnemonic
+      
+          pip install mnemonic
+          
 To install the bip44 package, check that your dev environment is active, and then run the following:
-      pip install bip44
+      
+          pip install bip44
 
       
 ## Next, Install Ganache
