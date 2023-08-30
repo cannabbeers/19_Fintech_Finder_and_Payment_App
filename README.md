@@ -15,3 +15,11 @@ To install the bip44 package, check that your dev environment is active, and the
 pip install bip44
 Install Ganache
 In this section, you’ll download the latest version of Ganache and then create a Ganache workspace
+
+
+https://web3py.readthedocs.io/en/stable/
+web3.py is a Python library for interacting with Ethereum.
+
+It’s commonly found in decentralized apps (dapps) to help with sending transactions, interacting with smart contracts, reading block data, and a variety of other use cases.
+
+The original API was derived from the Web3.js Javascript API, but has since evolved toward the needs and creature comforts of Python developers.
