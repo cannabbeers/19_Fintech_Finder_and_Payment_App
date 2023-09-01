@@ -1,3 +1,6 @@
+
+# under construction, working out errors running to ST
+
 # 19_Fintech_Finder_and_Payment_App
 Module 19 Challenge
 
