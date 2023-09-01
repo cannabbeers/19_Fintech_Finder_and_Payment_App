@@ -22,6 +22,12 @@ def generate_account():
     # Fetch mnemonic from environment variable.
     mnemonic = os.getenv("MNEMONIC")
 
+
+     # mnemonic is a string ?????????????
+    if not isinstance(mnemonic, str):
+        raise TypeError("Mnemonic must be a string.")
+
+
     # Create Wallet Object
     wallet = Wallet(mnemonic)
 
