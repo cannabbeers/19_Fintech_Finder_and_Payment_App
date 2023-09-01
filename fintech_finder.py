@@ -98,7 +98,7 @@ candidate_database = {
 people = ["Lane", "Ash", "Jo", "Kendall"]
 
 
-def get_people():
+def get_people(w3):
     """Display the database of Fintech Finders candidate information."""
     db_list = list(candidate_database.values())
 
@@ -136,7 +136,7 @@ account = generate_account()
 ##########################################
 
 # Write the client's Ethereum account address to the sidebar
-st.sidebar.write(w3, account.address)
+st.sidebar.write(account.address)
 
 ##########################################
 # Step 1 - Part 5:
@@ -148,7 +148,12 @@ st.sidebar.write(w3, account.address)
 # Call `get_balance` function and pass it your account address
 # Write the returned ether balance to the sidebar
 # YOUR CODE HERE
-ether = get_balance(w3, account.address)
+st.sidebar.write(
+    get_balance(
+        w3=w3, 
+        address=account.address
+        )
+        )
 ##########################################
 
 # Create a select box to chose a FinTech Hire candidate
@@ -229,7 +234,13 @@ st.sidebar.markdown("## Total Wage in Ether")
 # Step 2 - Part 1:
 # * Write the equation that calculates the candidate’s wage. This equation
 # should assess the candidate’s hourly rate from the candidate database
-# (`candidate_database[person][3]`) and then multiply this hourly rate by
+#
+# review here for 'wage' calculation
+# 
+#  (`candidate_database[person][3]`) and then multiply this hourly rate by
+# 
+# 
+# 
 # the value of the `hours` variable. Save this calculation’s output as a
 # variable named `wage`.
 # * Write the `wage` variable to the Streamlit sidebar by using `st.sidebar.write`.
@@ -239,12 +250,14 @@ st.sidebar.markdown("## Total Wage in Ether")
 # rate from the candidate database (`candidate_database[person][3]`) by the
 # value of the `hours` variable
 # YOUR CODE HERE
-wage = hours * hourly_rate
+wage = candidate_database[person][3] * hours
 
 # @TODO
 # Write the `wage` calculation to the Streamlit sidebar
 # YOUR CODE HERE
-st.sidebar.write(wage, "wage")
+# st.sidebar.write(wage, "wage")
+
+st.sidebar.write(wage)
 ##########################################
 # Step 2 - Part 2:
 # * Call the `send_transaction` function and pass it three parameters:
@@ -271,7 +284,10 @@ if st.sidebar.button("Send Transaction"):
     # Your `account`, the `candidate_address`, and the `wage` as parameters
     # Save the returned transaction hash as a variable named `transaction_hash`
     # YOUR CODE HERE
-    transaction_hash = send_transaction(w3, account, candidate_address, wage)
+    # transaction_hash = send_transaction(w3, account, candidate_address, wage)
+    transaction_hash = send_transaction(w3=w3, account=account, to=candidate_address, wage=wage)
+
+
     # Markdown for the transaction hash
     st.sidebar.markdown("#### Validated Transaction Hash")
 
@@ -283,7 +299,7 @@ if st.sidebar.button("Send Transaction"):
 
 # The function that starts the Streamlit application
 # Writes FinTech Finder candidates to the Streamlit page
-get_people()
+get_people(w3)
 
 ################################################################################
 # Step 3: Inspect the Transaction

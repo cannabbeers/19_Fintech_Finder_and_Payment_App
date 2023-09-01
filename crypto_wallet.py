@@ -15,6 +15,14 @@ from web3 import middleware
 from web3.gas_strategies.time_based import medium_gas_price_strategy
 
 ################################################################################
+
+
+# debugg testing notes: 
+print("Mnemonic:", os.getenv("MNEMONIC"))
+
+
+
+
 # Wallet functionality
 
 def generate_account():
@@ -68,7 +76,7 @@ def send_transaction(w3, account, to, wage):
         "from": account.address,
         "value": value,
         "gas": gasEstimate,
-        "gasPrice": 0,
+        "gasPrice": 2000000001, # gas cannot be zero, fixed starter
         "nonce": w3.eth.getTransactionCount(account.address)
     }
 
